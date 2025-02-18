@@ -30,7 +30,14 @@ public class CustomerTask {
     @Column(nullable = false, length = 10)
     private int budget;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
     private User user;
 
+    public CustomerTask(String taskName, String description, String photo, int budget, User user) {
+        this.taskName = taskName;
+        this.description = description;
+        this.photo = photo;
+        this.budget = budget;
+        this.user = user;
+    }
 }

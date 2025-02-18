@@ -6,28 +6,33 @@ import lombok.*;
 
 @Entity
 @Table(name = "user_")
-@Getter
 @NoArgsConstructor @AllArgsConstructor
 @EqualsAndHashCode @ToString
 public class User {
 
+    @Getter
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Setter
+    @Setter @Getter
     @Column(nullable = false, unique = true, length = 50)
     private String username;
 
-    @Setter
+    @Setter @Getter
     @Column(nullable = false)
     private String password;
 
-    @Setter
+    @Setter @Getter
     @Column(nullable = false)
     private UserRole role;
 
-    @Setter
+    @Setter @Getter
     private boolean isActive;
 
-
+    public User(String username, String password, UserRole role, boolean isActive) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.isActive = isActive;
+    }
 }

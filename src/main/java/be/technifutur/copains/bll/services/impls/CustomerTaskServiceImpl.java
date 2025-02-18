@@ -13,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CustomerTaskServiceImpl implements CustomerTaskService {
 
-    private CustomerTaskRepository customerTaskRepository;
+    private final CustomerTaskRepository customerTaskRepository;
 
     @Override
     public List<CustomerTask> getAllCustomerTask() {
