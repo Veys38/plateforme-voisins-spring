@@ -6,14 +6,24 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <h1>Peekaboo</h1>
-        <p>Where is your mind?</p>
+    <th:block th:insert="~{layout/header}"></th:block>
+    <th:block th:insert="~{layout/section}"></th:block>
 
-    <ul>
-        <li>
-            <p th:text="${customerTask.username}"></p>
-        </li>
-    </ul>
+    <div class="container-body-principal">
+        <ul class="task-container">
+            <li th:each="task :${customerTasks}">
+                <div class="task-item">
+                    <img th:src="@{/assets/{photo}(photo=${task.photo})}" alt="Task Image" class="task-image">
+                    <h3 th:text="${task.taskName}"></h3>
+                    <p th:text="${task.budget}"></p>
+                    <p>
+                        Posted by : <a th:text="${task.user.username}"></a>
+                    </p>
+
+                </div>
+            </li>
+        </ul>
+    </div>
 
 
 </body>
