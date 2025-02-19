@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title></title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/customerTaskDetails.css}">
+
 </head>
 <body>
+
+    <th:block th:insert="~{layout/header}"></th:block>
+    <th:block th:insert="~{layout/section}"></th:block>
+
+    <div class="page-container">
+        <nav class="breadcrumb">
+            <a href="">Retour</a>
+            <a href="/">Accueil</a>
+            <a href="/social">Social</a>
+            <a href="/babysitter">Babysitter</a>
+            <span th:text="customerTaskDetails.id"></span>
+        </nav>
+        <div class="article-container">
+            <h2 th:text="${customerTaskDetails.user.username}"></h2>
+            <img th:src="@{/assets/{photo}(photo=${customerTaskDetails.photo})}" alt="Task Image" class="task-image">
+            <p th:text="${customerTaskDetails.budget}"></p>
+
+        </div>
+    </div>
+
+
 
 </body>
 </html>

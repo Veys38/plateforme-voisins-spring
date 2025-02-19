@@ -26,8 +26,8 @@ public class CustomerTaskController {
 
     @GetMapping("/customer-task-details/{id}")
     public String getCustomerTaskById(
-            Model model,
-            @PathVariable Long id
+            @PathVariable Long id,
+            Model model
     ){
         model.addAttribute("customerTaskDetails", customerTaskService.getCustomerTaskById(id));
         return "pages/customerTaskDetails";

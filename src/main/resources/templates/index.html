@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Plateforme-Voisins</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
 </head>
 <body>
     <th:block th:insert="~{layout/header}"></th:block>
@@ -13,13 +14,14 @@
         <ul class="task-container">
             <li th:each="task :${customerTasks}">
                 <div class="task-item">
-                    <img th:src="@{/assets/{photo}(photo=${task.photo})}" alt="Task Image" class="task-image">
-                    <h3 th:text="${task.taskName}"></h3>
-                    <p th:text="${task.budget}"></p>
-                    <p>
-                        Posted by : <a th:text="${task.user.username}"></a>
-                    </p>
-
+                    <a th:href="@{/customer-task-details/{id}(id=${task.id})}" class="task-link">
+                        <img th:src="@{/assets/{photo}(photo=${task.photo})}" alt="Task Image" class="task-image">
+                        <h3 th:text="${task.taskName}"></h3>
+                        <p th:text="${task.budget}"></p>
+                        <p>
+                            Posted by : <a th:text="${task.user.username}"></a>
+                        </p>
+                    </a>
                 </div>
             </li>
         </ul>

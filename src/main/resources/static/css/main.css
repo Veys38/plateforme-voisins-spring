@@ -531,45 +531,6 @@ h2 {
         margin:0;
     }
 }
-/* ---------------------------------------------------------- Début Footer */
-
-.container-body-principal{
-    max-width: 1244px;
-    margin: auto;
-    background-color: white;
-}
-
-ul.task-container {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    margin: 20px;
-}
-
-.task-container li {
-    width: 100%;
-}
-
-.task-item {
-    display: block;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre vers le bas */
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.task-item:hover {
-    background-color: #f8f8f8; /* Fond change en douceur */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.task-image {
-    width: 200px;
-    height: 1500px;
-    object-fit: cover;
-    object-position: center;
-}
 
 /* ---------------------------------------------------------- Début Footer */
 .footer-container {
